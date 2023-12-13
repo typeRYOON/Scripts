@@ -2,7 +2,7 @@ from os.path import isdir, isfile
 from colorama import init
 from os import getcwd
 CYAN, RESET = "\x1b[38;2;210;255;251m", "\u001b[0m"
-SRC = r"E:\PC\Downloads\Pather\\"   # Pather folder path.
+SRC = r"@@@"   # Pather folder path.
 
 
 class Neko:
