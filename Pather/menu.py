@@ -2,7 +2,7 @@ from os.path import isdir, isfile
 from colorama import init
 from os import getcwd
 CYAN, RESET = "\x1b[38;2;210;255;251m", "\u001b[0m"
-SRC = r"@@@"   # Pather folder path.
+SRC = r"E:\PC\Downloads\Pather\\"   # Pather folder path.
 
 
 class Neko:
@@ -97,6 +97,8 @@ def menu(NEKO: "Neko") -> None:
             if Remains[1].lower() == "cwd": Remains[1] = getcwd()
             if not isdir(Remains[1]): continue
             if Remains[0][-1] != '.': Remains[0] = f"{Remains[0]}."
+            if Remains[1].endswith('\\') and Remains[1][-2:] != "\\\\":
+                Remains[1] += '\\'
 
             NEKO.Dirs.append(tuple(Remains))
             NEKO.Dirs.sort(key=NEKO.sortTup, reverse=True)
