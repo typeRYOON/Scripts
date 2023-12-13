@@ -37,7 +37,8 @@ Move the `pather.bat` file to a folder that's accessible via your system's `PATH
 You should now be able to run the command `pather` from anywhere in your system.
 
 ## Getting Started
-> Tip : : You can shorten the commands to `a`, `d`, and `l` if you'd like, simply edit `menu.py`
+> Tip : : You can shorten the commands to `a`, `d`, and `l` if you'd like, simply edit `menu.py`  
+> Tip : : These commands are not case sensitive. ( directory paths are if your machine is UNIX based )
 ### Jump command
 To move to your specified directories simply enter the number next to the menu string:
 ```
@@ -49,6 +50,7 @@ To add entries to your Pather directory list, the syntax of the add command is l
  >> add "TITLE" "PATH"
 ```
 Where `PATH` is the actual directory to jump to and `TITLE` is the string to show in the menu.  
+You can type cwd 
 Spaces are allowed as long as the string is within the quotes.  
 
 ### Del command
