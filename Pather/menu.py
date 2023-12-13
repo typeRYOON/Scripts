@@ -116,8 +116,11 @@ def menu(NEKO: "Neko") -> None:
             continue
 
     if not NEKO.Same: NEKO.writeFile()
-    with open(fr"{SRC}run.py", 'w', encoding="utf-8") as f:   f.write(f"print(r'{NEKO.CHDIR}')")
-    with open(fr"{SRC}last.txt", 'w', encoding="utf-8") as f: f.write(getcwd())
+    checks = [NEKO.CHDIR, getcwd()]
+    for i, term in enumerate(checks):
+        if term.endswith('\\') and term[-2:] != "\\\\": checks[i] += '\\'
+    with open(fr"{SRC}run.py", 'w', encoding="utf-8") as f:   f.write(f"print(r'{checks[0]}')")
+    with open(fr"{SRC}last.txt", 'w', encoding="utf-8") as f: f.write(checks[1])
 
 
 if __name__ == "__main__":
