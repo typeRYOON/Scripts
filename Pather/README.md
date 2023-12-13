@@ -19,4 +19,4 @@ cd Scripts
 Run setup.py **: : `py setup.py`**  
 > You will be prompted to enter where the Pather folder is ( folder with source code ).  
 > Simply enter the current working directory.  
-![asd](public/Pather/images/Pather-01.jpg)
+![asd](/public/Pather/images/Pather-01.jpg)
