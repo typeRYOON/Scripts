@@ -61,7 +61,7 @@ To delete entries from your Pather directory list, the syntax of the del command
 Where `NUMBER` is the number next to your menu string.
 
 ### Last command
-To quickly jump to the last directory you pather'd to, the syntax of the last command is like so:
+To quickly jump to the last directory you opened Pather from, the syntax of the last command is like so:
 ```
  >> last
 ```
