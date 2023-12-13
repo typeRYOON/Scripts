@@ -20,7 +20,7 @@ git clone https://github.com/typeRYOON/Scripts
 cd Scripts
 ```
 > Move the Pather folder to where you'd like for the internal program to subsist.  
-> I suggest moving it to a folder without heightened permissions as Pather writes to its own internal files.
+> I suggest moving it to a folder without heightened permissions as Pather writes to its own internal files.  
 > Delete the bundled README.md file if you'd like.
 
 ### Running setup.py
