@@ -1,8 +1,10 @@
 # Pather : : A Quick Directory Changer
-Pather is a command line utility program that quickly cd's the user to a menu specified directory. You can add and delete entries easily with simple commands.
-![]
+Pather is a command line utility program that quickly cd's the user to a menu specified directory.  
+You can add and delete entries easily with simple commands.  
+Pather was designed to work on Windows machines, if there's an issue on UNIX machines, please contact me.
+> ![](/public/Pather/images/PATHER-02.jpg)
 
-Path was designed to work on Windows machines, if there's an issue on UNIX machines, please contact me.
+
 
 ## Prerequisites
 Please make sure you have the following prerequisites:
@@ -23,7 +25,7 @@ Run setup.py **: : `py setup.py`**
 > You will be prompted to enter where the Pather folder is ( folder with source code ).  
 > Simply enter the current working directory.
 > 
-> ![](/public/Pather/images/Pather-01.jpg)
+> ![](/public/Pather/images/PATHER-01.jpg)
 
 Move the Pather.bat file to a folder that's accessible via your system's `PATH` variable.
 * For Windows, this [guide](https://stackoverflow.com/a/44272417) may help.
