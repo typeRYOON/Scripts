@@ -46,7 +46,7 @@ To move to your specified directories simply enter the number next to the menu s
 ### Add command
 To add entries to your Pather directory list, the syntax of the add command is like so:
 ```
- >> add "PATH" "TITLE"
+ >> add "TITLE" "PATH"
 ```
 Where `PATH` is the actual directory to jump to and `TITLE` is the string to show in the menu.  
 Spaces are allowed as long as the string is within the quotes.  
