@@ -4,11 +4,9 @@ Pather was designed to work on Windows machines, if there's an issue on UNIX mac
 
 You can add and delete entries easily with simple commands.  
 This program has a paging system incase you have many directories added to your pather directory list.  
-> Example:
+> Example usage:
 > 
 > ![](/public/Pather/images/PATHER-02.jpg)
-
-
 
 ## Prerequisites
 Please make sure you have the following prerequisites:
@@ -23,6 +21,7 @@ cd Scripts
 ```
 > Move the Pather folder to where you'd like for the internal program to subsist.  
 > I suggest moving it to a folder without heightened permissions as Pather writes to its own internal files.
+> Delete the bundled README.md file if you'd like.
 
 ### Running setup.py
 Run setup.py **: : `py setup.py`**   
