@@ -114,7 +114,7 @@ def menu(NEKO: "Neko") -> None:
             continue
 
     if not NEKO.Same: NEKO.writeFile()
-    with open(fr"{SRC}\run.py", 'w', encoding="utf-8") as f: f.write(f"print(r'{NEKO.CHDIR}')")
+    with open(fr"{SRC}\run.py", 'w', encoding="utf-8") as f:   f.write(f"print(r'{NEKO.CHDIR}')")
     with open(fr"{SRC}\last.txt", 'w', encoding="utf-8") as f: f.write(getcwd())
 
 
