@@ -1,2 +1,2 @@
 # Scripts
-wip adding later :P
+WIP, will add more scripts later.
