@@ -1,4 +1,4 @@
-from os import remove
+from os import remove, name
 from os.path import isdir
 
 
@@ -9,6 +9,7 @@ def setup() -> None:
         print(f"\n Invalid path :: {pDir}")
         return
 
+    pDir += "\\\\" if name == "nt" else '/'
     for path in ("menu.py", "run.py", "Pather.bat"):
         with open(path, 'r', encoding="utf-8") as f: c = f.read()
         with open(path, 'w', encoding="utf-8") as f:

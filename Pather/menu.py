@@ -7,7 +7,7 @@ SRC = r"@@@"   # Pather folder path.
 
 class Neko:
     def __init__(s):
-        s.FileName = fr"{SRC}\dirs.txt"
+        s.FileName = fr"{SRC}dirs.txt"
         s.CHDIR = getcwd()
         s.Dirs = s.readFile()
         s.Menus = dict()
@@ -88,7 +88,7 @@ def menu(NEKO: "Neko") -> None:
 
         # Retrieve last dir:
         elif Choice == "last":
-            with open(fr"{SRC}\last.txt", 'r', encoding="utf-8") as f:
+            with open(fr"{SRC}last.txt", 'r', encoding="utf-8") as f:
                 NEKO.CHDIR = f.read()
             break
 
@@ -114,8 +114,8 @@ def menu(NEKO: "Neko") -> None:
             continue
 
     if not NEKO.Same: NEKO.writeFile()
-    with open(fr"{SRC}\run.py", 'w', encoding="utf-8") as f:   f.write(f"print(r'{NEKO.CHDIR}')")
-    with open(fr"{SRC}\last.txt", 'w', encoding="utf-8") as f: f.write(getcwd())
+    with open(fr"{SRC}run.py", 'w', encoding="utf-8") as f:   f.write(f"print(r'{NEKO.CHDIR}')")
+    with open(fr"{SRC}last.txt", 'w', encoding="utf-8") as f: f.write(getcwd())
 
 
 if __name__ == "__main__":
