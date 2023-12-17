@@ -150,9 +150,9 @@ void titleCase(char* str)
                 *c = std::toupper(*c);
                 upper = false;
             }
-            else *c = std::tolower(*c);
+            else { *c = std::tolower(*c); }
         }
-        else upper = true; 
+        else { upper = true; }
     }
 }
 
