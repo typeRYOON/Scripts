@@ -1,5 +1,23 @@
 from subprocess import run
 import os
+"""
+desktop.inis are within my folders btw.
+Directory structure:
+Esrgan:
+    Executable:
+        realesrgan-ncnn-vulkan.exe
+        vcomp140.dll
+        vcomp140d.dll
+        Models:
+            realesrgan-x4plus-anime.param
+            realesrgan-x4plus-anime.bin
+            ...
+    Results:
+        Input:
+            ...
+        Output:
+            ...
+"""
 
 
 def esrgan() -> None:
