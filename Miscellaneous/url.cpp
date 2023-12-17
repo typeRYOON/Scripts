@@ -173,7 +173,6 @@ int validateArgs(int argc, char* argv[])
         return 0;
     }
     for (int i = 2; i < argc; ++i) postArgs.push_back(argv[i]);
-
     return funcMap[argv[1]](postArgs);
 }
 
