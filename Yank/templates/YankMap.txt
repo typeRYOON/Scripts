@@ -1,4 +1,0 @@
-texmathgeneral,E:\\cmder\\templates\\TexMathGeneral.tex,.tex,
-progpython,E:\\cmder\\templates\\progpython.py,.py,
-progcpp,E:\\cmder\\templates\\progcpp.cpp,.cpp,
-makefile,E:\\cmder\\templates\\makefile,,
