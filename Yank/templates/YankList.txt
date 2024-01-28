@@ -1,4 +1,0 @@
-TexMathGeneral.
-ProgPython.
-ProgCPP.
-Makefile.
