@@ -1,6 +1,7 @@
 from os.path import isdir, isfile
 from colorama import init
 from os import getcwd
+from sys import argv
 CYAN, RESET = "\x1b[38;2;210;255;251m", "\u001b[0m"
 SRC = r"@@@"   # Pather folder path.
 
@@ -13,6 +14,7 @@ class Neko:
         s.Menus = dict()
         s.Same = True
         s.EndPage = 1
+        s.noArg = True
 
     def readFile(s) -> list:
         if not isfile(s.FileName): return []
@@ -59,10 +61,15 @@ def remainsSplit(R: list) -> bool:
 
 
 def menu(NEKO: "Neko") -> None:
+    if len(argv) > 1 and argv[1].isdigit():
+        Arg = int(argv[1])
+        if 0 < Arg <= len(NEKO.Dirs):
+            NEKO.CHDIR = NEKO.Dirs[Arg - 1][1]
+            NEKO.noArg = False
     NEKO.menusCreate()
     z = 1
 
-    while True:
+    while True and NEKO.noArg:
         Choice = input(NEKO.Menus[z]).strip()
 
         # Turn page:
