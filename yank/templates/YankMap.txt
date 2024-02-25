@@ -1,5 +1,0 @@
-texhomework,E:\\cmder\\templates\\Tex\\TexHomework.tex,.tex,
-progpython,E:\\cmder\\templates\\Prog\\ProgPython.py,.py,
-progcpp,E:\\cmder\\templates\\Prog\\ProgCPP.cpp,.cpp,
-makefile,E:\\cmder\\templates\\Prog\\ProgMakefile,,
-progarduinolab,E:\\cmder\\templates\\Prog\\ProgArduinoLab.ino,.ino

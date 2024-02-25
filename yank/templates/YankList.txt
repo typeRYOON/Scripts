@@ -1,5 +1,0 @@
-TexHomework.
-Makefile.
-ProgArduinoLab.
-ProgCPP.
-ProgPython.
