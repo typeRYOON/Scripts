@@ -1,0 +1,33 @@
+# Build Command  ::
+BUILD   = g++ -std=c++23 -O2 -Wall
+EXE     = main
+
+# Source Files   ::
+SRC-01  = main
+SRC     = $(SRC-01)
+
+# Header Files   ::
+INC-01  = name
+INC     = $(INC-01)
+
+# Platform Check ::
+ifeq ($(OS), Windows_NT)
+	RM = del /f
+	CLS = cls
+else
+	RM = rm -f
+	CLS = clear
+endif
+
+# Build Target   ::
+b: c
+	@$(BUILD) $(SRC) -o $(EXE).exe
+
+# Clean Target   ::
+c:
+	@$(RM) $(EXE).exe;
+
+# Run Target     ::
+r:
+	@$(CLS)
+	@./$(EXE).exe
