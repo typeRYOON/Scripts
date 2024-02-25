@@ -1,13 +1,13 @@
 # Build Command  ::
 BUILD   = g++ -std=c++23 -O2 -Wall
-EXE     = main
+EXE     = main.exe
 
 # Source Files   ::
-SRC-01  = main
+SRC-01  = main.cpp
 SRC     = $(SRC-01)
 
 # Header Files   ::
-INC-01  = name
+INC-01  = name.hpp
 INC     = $(INC-01)
 
 # Platform Check ::
@@ -21,13 +21,13 @@ endif
 
 # Build Target   ::
 b: c
-	@$(BUILD) $(SRC) -o $(EXE).exe
+	@$(BUILD) $(SRC) -o $(EXE)
 
 # Clean Target   ::
 c:
-	@$(RM) $(EXE).exe;
+	@$(RM) $(EXE)
 
 # Run Target     ::
 r:
 	@$(CLS)
-	@./$(EXE).exe
+	@./$(EXE)
