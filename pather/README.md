@@ -6,7 +6,7 @@ You can add and delete entries easily with simple commands.
 This program has a paging system incase you have many directories added to your pather directory list.  
 > Example usage:
 > 
-> ![](/public/Pather/images/PATHER-02.jpg)
+> ![](/images/pather/pather-2.jpg)
 
 ## Prerequisites
 Please make sure you have the following prerequisites:
@@ -28,7 +28,7 @@ Run setup.py **: : `py setup.py`**
 > You will be prompted to enter where the `Pather` folder is ( folder with source code ).  
 > Simply enter the current working directory.
 > 
-> ![](/public/Pather/images/PATHER-01.jpg)
+> ![](/images/pather/pather-1.jpg)
 
 Move the `pather.bat` file to a folder that's accessible via your system's `PATH` variable.
 * For Windows, this [guide](https://stackoverflow.com/a/44272417) may help.
