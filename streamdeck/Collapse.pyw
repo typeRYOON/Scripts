@@ -2,8 +2,9 @@ from shutil import rmtree
 from stat import S_IWRITE
 import subprocess
 import os
-DLN = r"E:\PC\Downloads\New"
-DL =  r"E:\PC\Downloads"
+sZip =  r"C:\Program Files\7-Zip\7z.exe"
+DL   =  r"E:\PC\Downloads" # DL folder, no rmtree
+DLN  = fr"{DL}\New"        # rmtree here, careful with path
 
 
 def removeReadOnly(func: callable, path: str, _: None) -> None:
@@ -16,7 +17,7 @@ def recurse(folderPath: str, lst: list) -> None:
         ext, filePath = os.path.splitext(file)[1].lower(), fr"{folderPath}\{file}"
         if os.path.isdir(filePath):
             continue
-        elif ext in (".zip", ".7z"):
+        elif ext in (".zip", ".7z", ".rar", ".cbz"):
             zipExtractor(filePath)
             continue
 
@@ -38,13 +39,13 @@ def recurse(folderPath: str, lst: list) -> None:
 def zipExtractor(archivePath: str) -> None:
     if os.path.isdir(dest := os.path.splitext(archivePath)[0]):
         rmtree(dest)
-    ret = subprocess.run(fr'"C:\Program Files\7-Zip\7z.exe" x "{archivePath}" -p0 -o"{dest}"',
+    ret = subprocess.run(fr'"{sZip}" x "{archivePath}" -p0 -o"{dest}"',
                          creationflags=subprocess.CREATE_NO_WINDOW,
                          capture_output=True)
     # Good extraction:
     if ret.returncode == 0:
         os.remove(archivePath)
-    # Incorrect/No password passed
+    # Incorrect/No password passed:
     elif ret.returncode == 2:
         folderDir, n = archivePath[archivePath.rfind('\\') + 1:], "01"
         if os.path.isdir(dest):
@@ -56,34 +57,42 @@ def zipExtractor(archivePath: str) -> None:
 
 
 def folderManifest() -> None:
-    fileNum = 0
+    # Retrive file number
     if os.path.isdir(DLN):
-        for fileName in reversed(os.listdir(DLN)):
-            if fileName == "desktop.ini" or fileName == "Else": continue
-            fileNum = int(fileName[:4])
-            break
-        for fileName in reversed(os.listdir(fr"{DLN}\Else")):
-            if fileName == "desktop.ini": continue
-            fileNum = max(fileNum, int(fileName[:4]))
-            break
+        with open(fr"{DLN}\Else\0000 - LOG", 'r') as f:
+            fileNum = [int(f.read())]
     else:
+        fileNum = [0]
         os.mkdir(DLN)
         os.mkdir(fr"{DLN}\Else")
+        with open(fr"{DLN}\Else\0000 - LOG", 'w') as f:
+            f.write("0")
 
     folders, archives = [], []
-    fileNum = [fileNum]
-
+    toExtract, parts = set(), set()
     for f in os.listdir(DL):
-        if not os.path.isdir(fr"{DL}\{f}") or f == "New":
-            continue
-        folders.append((os.path.getctime(fr"{DL}\{f}"),
-                        f))
+        # Folder Collection
+        if os.path.isdir(fr"{DL}\{f}" and f != "New"):
+            folders.append((os.path.getctime(fr"{DL}\{f}"), f))
 
-    for i, f in enumerate(os.listdir(DL)):
+        # Archive Collection
         ext = os.path.splitext(f)
-        if ext[1].lower() not in (".zip", ".7z", ".rar"):
-            continue
+        if ext[1].lower() == ".part":
+            parts.add(ext[0])
+        elif ext[1].lower() in (".zip", ".7z", ".rar", ".cbz"):
+            toExtract.add(f)
 
+    for partFile in parts:
+        start = partFile.find('.')
+        end   = partFile[start+1:].find('.')
+        check = f"{partFile[:start]}{partFile[start + 1 + end:]}"
+
+        if check in toExtract:
+            toExtract.remove(check)
+
+    # Retain old ctime and extract archive
+    for i, f in enumerate(toExtract):
+        ext = os.path.splitext(f)
         expected, ctime = ext[0], os.path.getctime(fr"{DL}\{f}")
         if os.path.isdir(fr"{DL}\{expected}"):
             expected = f"{i}_{ctime}"
@@ -96,16 +105,20 @@ def folderManifest() -> None:
     folders.extend(archives)
     folders.sort(key=lambda x: x[0])
 
+    # Recurse
     for fTuple in folders:
         curFolderPath = fr"{DL}\{fTuple[1]}"
-        print(curFolderPath)
         if not os.path.isdir(curFolderPath):
             continue
         recurse(curFolderPath, fileNum)
 
-    if len(os.listdir(DLN)) == 1 and len(os.listdir(fr"{DLN}\Else")) == 0:
-        os.rmdir(fr"{DLN}\Else"); os.rmdir(DLN)
+    # No moved files, remove empty new folder
+    if len(os.listdir(DLN)) == 1 and len(os.listdir(fr"{DLN}\Else")) == 1:
+        rmtree(fr"{DLN}")
+    # Write file number to log file
+    else:
+        with open(fr"{DLN}\Else\0000 - LOG", 'w') as f:
+            f.write(str(fileNum[0]))
 
 
-if __name__ == "__main__":
-    folderManifest()
+if __name__ == "__main__": folderManifest()
