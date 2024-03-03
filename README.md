@@ -43,6 +43,7 @@
   </ol>
 </details>
 
+## Stream Deck
 > This folder contains Stream Deck scripts that perform various tasks. You can use anything to launch these programs, a Stream Deck is simply for ease of use.
 > Below are script descriptions, what they do, and what command to run it locally on your Stream Deck.
 ---
@@ -54,12 +55,22 @@
 > Dependencies:
 > - Requires 7zip for folder extraction. Modify the zipExtracter function if using a different extraction tool.
 >
-> Usage:
 > Replace the following variables with your local paths:
 > - DL: Download folder path
 > - DLN: Expected new folder path
 > - sZip: Path to your 7zip executable
-> <p align="right">(<a href="#readme-top">back to top</a>)</p>
----  
-> ### Collapse : :  
----
+> - Optional: Replace the tuples around line 26/28 with file extentions you'd like to specify. 
+>
+> Stream Deck Open Command:
+> `pyw "$(PATH)\Collapse.pyw"`   
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+> [**EmptyRecycleBin.pyw - Empty Recycle Bin**](https://github.com/typeRYOON/Scripts/blob/main/streamdeck/EmptyRecycleBin.pyw "EmptyRecycleBin")  
+> This script empties the recycle bin using winshell (Windows Python Module).
+>
+> Dependencies:   
+> - `pip install winshell`
+> 
+> Stream Deck Open Command:
+> `pyw "$(PATH)\EmptyRecycleBin.pyw"`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
