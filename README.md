@@ -22,9 +22,9 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#stream-deck">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#collapse.pyw">Collapse.pyw</a></li>
       </ul>
     </li>
     <li>
@@ -47,6 +47,7 @@
 > This folder contains Stream Deck scripts that perform various tasks. You can use anything to launch these programs, a Stream Deck is simply for ease of use.
 > Below are script descriptions, what they do, and what command to run it locally on your Stream Deck.
 ---
+<a name="collapse.pyw"></a>
 > [**Collapse.pyw - Folder Tree Collapser (for specified extension files)**](https://github.com/typeRYOON/Scripts/blob/main/streamdeck/Collapse.pyw "Collapse")   
 > This script collapses the folder structure within your downloads folder, recursively traverses subfolders, and moves files of a specified extension (default = image files) to a folder named "New". It handles multiple collapses gracefully, appending new folder contents to the end of the "New" folder. Any files not matching the specified extension are moved to "New\Else*".
 >
