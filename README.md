@@ -22,9 +22,10 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#stream-deck">About The Project</a>
+      <a href="#stream-deck">Stream Deck</a>
       <ul>
-        <li><a href="#collapse.pyw">Collapse.pyw</a></li>
+        <li><a href="#collapse.pyw">Collapse - Folder Tree Collapser (for specified extension files)</a></li>
+        <li><a href="#emptyrecyclebin.pyw">EmptyRecycleBin - Empty Recycle Bin</a></li>
       </ul>
     </li>
     <li>
@@ -66,6 +67,7 @@
 > `pyw "$(PATH)\Collapse.pyw"`   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<a name="emptyrecyclebin.pyw"></a>
 > [**EmptyRecycleBin.pyw - Empty Recycle Bin**](https://github.com/typeRYOON/Scripts/blob/main/streamdeck/EmptyRecycleBin.pyw "EmptyRecycleBin")  
 > This script empties the recycle bin using winshell (Windows Python Module).
 >
