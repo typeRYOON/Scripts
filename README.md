@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/typeRYOON/Scripts">
-    <img src="resources/logo.jpg" alt="Logo" width="80" height="80">
+    <img src="resources/logo.ico" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Scripts</h3>
